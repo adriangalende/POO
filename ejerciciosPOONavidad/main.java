@@ -1,4 +1,5 @@
 package ejerciciosPOONavidad;
+import java.util.Arrays;
 import java.util.Iterator;
 
 import Clases.*;
@@ -34,8 +35,15 @@ public class main {
 			dni.checkLetra();
 			System.out.println(dni.getLetraSana());			    
 		}
+		
+		
+		
+		Hora hora = new Hora(13,32,5);
+		System.out.println(Arrays.toString(hora.getHora()));
+		hora.imprimirHora();
 
-
+		hora.setHora(23,60,58);
+		hora.imprimirHora();
 	}
 
 }
