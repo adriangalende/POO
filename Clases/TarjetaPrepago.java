@@ -38,7 +38,16 @@ public class TarjetaPrepago {
 	public void realizarLlamada(int segundos) {
 		/* 15 cents establecimiento, 1 cent el segundo */
 		this.setSaldo(this.getSaldo() - (0.15 + 0.01 * segundos));
-		consumo.setHora(0, 0, consumo.getSegundos() + segundos);
+		this.segundoAHora(segundos);
+	}
+	
+	public void consultarTarjeta(){
+		System.out.println("Datos tarjeta prepago");
+		System.out.println("Numero telefono: " + this.getNumeroTelefono());
+		System.out.println("DNI titular: " + nif.getCadena());
+		System.out.println(this.formateoHora(consumo) + " segundos consumidos");
+		consumo.imprimirHora();
+		System.out.println("Saldo actual: " + this.getSaldo().toString() + " €");
 	}
 	
 	
@@ -81,7 +90,20 @@ public class TarjetaPrepago {
 		this.consumo = consumo;
 	}
 	
+	/* Métodos privados */
 	
+	private int formateoHora(Hora consumo){
+		int[] matrizTiempo = consumo.getHora();
+		return (matrizTiempo[0] * 3600) + (matrizTiempo[1] * 60) + matrizTiempo[2];
+	}
+	
+	private void segundoAHora(int segundos) {
+		int horas = segundos / 3600;
+	    int segundosRestantes = segundos - horas * 3600;
+	    int minutos = segundosRestantes / 60;
+	    int segs = segundosRestantes - minutos * 60;
+		consumo.setHora(horas, minutos, segs);
+	}
 	
 	
 

@@ -19,7 +19,7 @@ public class Hora {
 		 */	
 		this.hora = controLFormatoHora(hora);
 		this.minutos = controlFormatoMinutosSegundos(minutos);
-		this.segundos = controlFormatoMinutosSegundos(segundos);
+		this.segundos = controlFormatoSegundos(segundos);
 
 	}
 	
@@ -43,6 +43,15 @@ public class Hora {
 		}
 	}
 	
+	public int controlFormatoSegundos(int segundos) {
+		
+		if(segundos >= 0 && segundos <= 59) {
+			return segundos;
+		} else {
+			return 0;
+		}
+	}
+	
 	public void imprimirHora() {
 		int[] hora = this.getHora();
 		System.out.println(hora[0] + ":" + hora[1] + ":" + hora[2]);
@@ -51,7 +60,7 @@ public class Hora {
 	public void setHora(int hora,int minutos,int segundos){
 		this.hora = controLFormatoHora(hora);
 		this.minutos = controlFormatoMinutosSegundos(minutos);
-		this.segundos = controlFormatoMinutosSegundos(segundos);
+		this.segundos = controlFormatoSegundos(segundos);
 	}
 	
 

@@ -59,9 +59,8 @@ public class main {
 		sim.realizarLlamada(10);
 		sim.getConsumo().imprimirHora();
 		System.out.println(sim.getSaldo());
-		sim.realizarLlamada(15);
-		sim.getConsumo().imprimirHora();
-		System.out.println(sim.getSaldo());
+		sim.realizarLlamada(60);
+		sim.consultarTarjeta();
 		
 	}
 
