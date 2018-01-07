@@ -6,7 +6,7 @@ public class CuentaCorriente {
 	private String direccion;
 	private String telefono;
 	private Double saldo;
-	//private DNI nif;
+	private DNI nif;
 	
 	
 	
