@@ -50,18 +50,23 @@ public class Fecha {
 	}
 	
 	public void incrementarFecha(int diasTotales) {
+		
 		int años = diasTotales / 365;
-		int meses = (diasTotales % 365) / 30;
-		int dias = (diasTotales % 365) % 30;
-		int[] tiempoTranscurrido = new int[] {años, meses, dias};
-		System.out.println(años + " años, " + meses + " meses y " + dias + " dias");
 		this.setAño(controlAño(this.getAño() + años));
+		
+		int meses = (diasTotales % 365) / 30;
 		this.setMes(controlMes(this.getMes() + meses));
+		
+		int dias = (diasTotales % 365) % 30;
 		this.setDia(controlDia(this.getDia() + dias));
 	}
 	
+	public String getFecha() {
+		return this.getDia() + "-" + this.getMes() + "-" + this.getAño();
+	}
+
 	public void imprimirFecha() {
-		System.out.println(this.getDia() + "-" + this.getMes() + "-" + this.getAño());
+		System.out.println(this.getDia() + "-" + mesLetra(this.getMes()) + "-" + this.getAño());
 	}
 	
 	
@@ -89,6 +94,11 @@ public class Fecha {
 		this.año = año;
 	}
 	
+	/* Métodos privados */
 	
+	private String mesLetra(int mes){
+		String[] meses = new String[] {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
+		return meses[mes-1];
+	}
 
 }
