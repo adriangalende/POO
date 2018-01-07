@@ -1,4 +1,6 @@
 package ejerciciosPOONavidad;
+import java.util.Iterator;
+
 import Clases.*;
 
 public class main {
@@ -17,12 +19,22 @@ public class main {
 		
 		
 		TablaAsignacion tabla = new TablaAsignacion();
+		System.out.println(tabla.calcularLetra(43182655));
+		tabla.mostrarTabla();
 	
-		System.out.println(tabla.calcularLetra("43182655"));
+
 		
-		
-		
-		
+		String[] listaDNI = new String[] {"43182655V", "43182653V", "43182653S","4310Z"};
+		DNI dni = new DNI("");
+		for (String dniTest : listaDNI) {
+			dni.setCadena(dniTest);
+			dni.checkDNI();
+			System.out.println("La letra para la parte numérica "+ dni.getCadena().substring(0, dni.getCadena().length()-1) +" debería ser: " + dni.obtenerLetra());			
+			System.out.println(dni.getNumeroSano());
+			dni.checkLetra();
+			System.out.println(dni.getLetraSana());			    
+		}
+
 
 	}
 

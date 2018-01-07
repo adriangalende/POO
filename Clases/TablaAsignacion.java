@@ -1,5 +1,7 @@
 package Clases;
 
+import java.util.Arrays;
+
 public class TablaAsignacion {
 	private String[] tabla = {"T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"};
 
@@ -33,9 +35,14 @@ public class TablaAsignacion {
 		return false;
 	}
 	
-	public String calcularLetra(String DNI){
-		int posicion = Integer.parseInt(DNI) % this.getModulo();
+	public String calcularLetra(int DNI){
+		int posicion = DNI % this.getModulo();
 		return this.getLetra(posicion);
+	}
+	
+	
+	public void mostrarTabla() {
+		System.out.println(Arrays.toString(this.tabla));
 	}
 		
 	
