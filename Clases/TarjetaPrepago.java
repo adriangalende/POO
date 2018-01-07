@@ -15,6 +15,7 @@ public class TarjetaPrepago {
 		this.numeroTelefono = numeroTelefono;
 		this.nif= nif;
 		this.saldo = saldo;
+		this.consumo = new Hora();
 	}
 
 	
@@ -34,6 +35,11 @@ public class TarjetaPrepago {
 		}
 	}
 	
+	public void realizarLlamada(int segundos) {
+		/* 15 cents establecimiento, 1 cent el segundo */
+		this.setSaldo(this.getSaldo() - (0.15 + 0.01 * segundos));
+		consumo.setHora(0, 0, consumo.getSegundos() + segundos);
+	}
 	
 	
 	public String getNumeroTelefono() {

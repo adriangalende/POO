@@ -56,6 +56,12 @@ public class main {
 		sim.enviarMensaje(-4);
 		System.out.println(sim.getSaldo() + " Euros de saldo");
 		
+		sim.realizarLlamada(10);
+		sim.getConsumo().imprimirHora();
+		System.out.println(sim.getSaldo());
+		sim.realizarLlamada(15);
+		sim.getConsumo().imprimirHora();
+		System.out.println(sim.getSaldo());
 		
 	}
 
