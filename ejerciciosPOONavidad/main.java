@@ -64,6 +64,17 @@ public class main {
 		sim.realizarLlamada(10);
 		sim.consultarTarjeta();
 		
+		
+		Fecha fecha = new Fecha(7,1,2018);
+		Fecha fecha2 = new Fecha();
+		
+
+		fecha.incrementarFecha(600);
+		fecha.imprimirFecha();
+		fecha2.incrementarFecha(35);
+		fecha2.imprimirFecha();
+		
+		
 	}
 
 }
