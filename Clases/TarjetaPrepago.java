@@ -98,11 +98,14 @@ public class TarjetaPrepago {
 	}
 	
 	private void segundoAHora(int segundos) {
+		/* Añadimos los segundos ya consumidos */
+		segundos += this.formateoHora(this.getConsumo());
 		int horas = segundos / 3600;
 	    int segundosRestantes = segundos - horas * 3600;
 	    int minutos = segundosRestantes / 60;
 	    int segs = segundosRestantes - minutos * 60;
 		consumo.setHora(horas, minutos, segs);
+		this.setConsumo(consumo);
 	}
 	
 	
