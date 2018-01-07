@@ -21,6 +21,14 @@ public class TarjetaPrepago {
 	/* metodos publicos */
 	
 	
+	public void ingresarSaldo(Double ingreso) {
+		if(ingreso > 0) {
+			this.setSaldo(this.getSaldo() + ingreso); 
+		}
+	}
+	
+	
+	
 	public String getNumeroTelefono() {
 		return numeroTelefono;
 	}

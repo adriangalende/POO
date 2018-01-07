@@ -44,6 +44,12 @@ public class main {
 
 		hora.setHora(23,60,58);
 		hora.imprimirHora();
+		
+		dni.setCadena("43182655V");
+		TarjetaPrepago sim = new TarjetaPrepago("634557628", dni, 20.00);
+		sim.ingresarSaldo(5.00);
+		System.out.println(sim.getSaldo() + " Euros de saldo");
+		
 	}
 
 }
