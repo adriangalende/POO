@@ -49,6 +49,13 @@ public class main {
 		TarjetaPrepago sim = new TarjetaPrepago("634557628", dni, 20.00);
 		sim.ingresarSaldo(5.00);
 		System.out.println(sim.getSaldo() + " Euros de saldo");
+		sim.enviarMensaje(2);
+		System.out.println(sim.getSaldo() + " Euros de saldo");
+		sim.enviarMensaje(4);
+		System.out.println(sim.getSaldo() + " Euros de saldo");
+		sim.enviarMensaje(-4);
+		System.out.println(sim.getSaldo() + " Euros de saldo");
+		
 		
 	}
 

@@ -27,6 +27,13 @@ public class TarjetaPrepago {
 		}
 	}
 	
+	public void enviarMensaje(int mensajes) {
+		/* restamos 9 céntimos por mensaje enviado*/
+		if(mensajes > 0) {
+			this.setSaldo(this.getSaldo() - (0.09 * mensajes));
+		}
+	}
+	
 	
 	
 	public String getNumeroTelefono() {
