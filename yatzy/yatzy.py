@@ -63,25 +63,21 @@ class Yatzy:
         dadosOrdenados = sorted(dices)
         return dadosOrdenados[-1] + dadosOrdenados[-2]
 
-    @staticmethod
-    def two_pair( d1,  d2,  d3,  d4,  d5):
-        counts = [0]*6
-        counts[d1-1] += 1
-        counts[d2-1] += 1
-        counts[d3-1] += 1
-        counts[d4-1] += 1
-        counts[d5-1] += 1
-        n = 0
-        score = 0
-        for i in range(6):
-            if (counts[6-i-1] >= 2):
-                n = n+1
-                score += (6-i)
 
-        if (n == 2):
-            return score * 2
+    @staticmethod
+    def two_pair(*dices):
+        numerosRepetidos = []
+        for number in dices:
+            if dices.count(number) > 1 and number not in numerosRepetidos:
+                numerosRepetidos.append(number)
+
+        if len(numerosRepetidos) == 2:
+            score = sum(numerosRepetidos) * 2
         else:
-            return 0
+            score = 0
+
+        return score
+
 
     @staticmethod
     def four_of_a_kind( _1,  _2,  d3,  d4,  d5):
