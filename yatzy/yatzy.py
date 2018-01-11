@@ -60,8 +60,11 @@ class Yatzy:
 
     @staticmethod
     def score_pair(*dices):
+        score = 0
         dadosOrdenados = sorted(dices)
-        return dadosOrdenados[-1] + dadosOrdenados[-2]
+        if dadosOrdenados[-1] == dadosOrdenados[-2]:
+            score = dadosOrdenados[-1] + dadosOrdenados[-2]
+        return score
 
 
     @staticmethod
