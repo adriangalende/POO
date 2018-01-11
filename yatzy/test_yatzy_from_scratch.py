@@ -27,3 +27,7 @@ def test_two_pair():
     assert 8 == Yatzy.two_pair(1,1,2,3,3)
     assert 0 == Yatzy.two_pair(1,1,2,3,4)
     assert 0 == Yatzy.two_pair(1,1,2,2,3,3)
+
+def test_four_of_a_kind():
+    assert 8 == Yatzy.four_of_a_kind(2,2,2,2,1)
+    assert 8 == Yatzy.four_of_a_kind(2,1,2,2,2)

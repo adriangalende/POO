@@ -1,14 +1,13 @@
-def two_pair(*dices):
-    numerosRepetidos = []
-    for number in dices:
-        if dices.count(number) > 1 and number not in numerosRepetidos:
-            numerosRepetidos.append(number)
-
-    if len(numerosRepetidos) == 2:
-        score = sum(numerosRepetidos) * 2
-    else:
-        score = 0
+def placeholder(numero, *dices):
+    score = 0
+    for dice in dices:
+        if dices.count(dice) >= numero:
+            score = dice * numero
 
     return score
 
-print(two_pair(6,5,4,6,4))
+
+
+def test_three_of_a_kind():
+    assert 8 == Yatzy.three_of_a_kind(2,2,2,2,1)
+    assert 8 == Yatzy.three_of_a_kind(2,1,2,2,2)
