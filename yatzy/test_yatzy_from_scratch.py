@@ -20,5 +20,5 @@ def test_ones():
     assert 3 == Yatzy.ones(1,2,3,5,6,9,8,2,3,6,1,1)
 
 def test_score_pair():
-    #assert 12 == Yatzy.score_pair(1,6,1,6,6)
+    assert 12 == Yatzy.score_pair(1,6,1,6,6)
     assert 12 == Yatzy.score_pair(6,1,2,6,1)
